@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타이머2</title>
+<style>
+div {
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div>
+<span id="sec">5</span>초<br>
+<button id="btn">시작</button>
+</div>
+<img id="photo">
+
+<script>
+var sec = document.getElementById("sec");
+var btn = document.getElementById('btn');
+var timer;
+
+btn.onclick = function() {
+	// 타이머 준비
+	timer = setInterval(displaySec, 1000);
+};
+
+function displaySec() {
+	if (sec.innerHTML == 0) {
+		clearInterval(timer);
+		
+		var photo = document.getElementById("photo");
+		photo.src = 'aaa.jpg';
+		
+		return;
+	}
+	sec.innerHTML = sec.innerHTML - 1;
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>web02</display-name>
+  
+  <!-- 컨텍스트 파라미터 등록 -->
+  <context-param>
+    <param-name>center</param-name>
+    <param-value>비트캠프</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>class</param-name>
+    <param-value>Java 80 기</param-value>
+  </context-param>
+  
+  <!-- 리스너 클래스 등록 -->
+  <listener>
+    <listener-class>step02.MyServletContextListener</listener-class>
+  </listener>
+  
+  <!-- 필터 클래스 정보 등록 -->
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>step02.MyFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>step04.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  
+  <!-- 필터를 적용할 URL 등록 -->
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/step02/myservlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  
+  <!-- 서블릿 클래스 정보 등록. -->
+  <servlet>
+    <servlet-name>Hello</servlet-name> <!-- 서블릿 이름 -->
+    <servlet-class>step01.Hello</servlet-class> <!-- 서블릿 클래스 -->
+  </servlet>
+  <servlet>
+    <servlet-name>Hello2</servlet-name> <!-- 서블릿 이름 -->
+    <servlet-class>step01.Hello2</servlet-class> <!-- 서블릿 클래스 -->
+  </servlet>
+  <servlet>
+    <servlet-name>MyServlet</servlet-name> <!-- 서블릿 이름 -->
+    <servlet-class>step02.MyServlet</servlet-class> <!-- 서블릿 클래스 -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Servlet23</servlet-name>
+    <servlet-class>step04.Servlet23</servlet-class>
+    <init-param>
+      <param-name>test1</param-name>
+      <param-value>aaaa</param-value>
+    </init-param>
+    <init-param>
+      <param-name>test2</param-name>
+      <param-value>bbbb</param-value>
+    </init-param>
+  </servlet>
+    
+  <!-- 서블릿 클래스에 URL을 지정. -->
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/step01/hello</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Hello2</servlet-name>
+    <!-- URL은 마음대로 작성할 수 있음을 증명하기 위해 위의 서블릿과 
+         다른 URL을 지정할 것이다. -->
+    <url-pattern>/hello2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/step02/myservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet23</servlet-name>
+    <url-pattern>/step04/servlet23</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

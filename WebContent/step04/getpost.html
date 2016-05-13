@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>getPost</title>
+</head>
+<body>
+<h1>Get 요청 예</h1>
+<h3> 1) 웹 브라우저 주소창에 URL을 입력했을 때</h3>
+
+<h3> 2) 다음과 같이 링크를 클릭했을 때</h3>
+<a href="servlet15">servlet15</a><br>
+<p>
+href="상대경로" :: 현재 URL을 기준으로 서버에 요청한다. <br>
+상대 경로란 ? : /로 시작하지 않는 경로를 의미한다.<br>
+href="servlet15" :<br>
+ 현재 URL이 http://localhost:8080/web02/step0/getpost.html 이기 때문에,<br> 요청 URL은 현재 URL 기준으로 다음과 같다.
+</p>
+
+<h3> 3) 입력 폼의 submit 버튼을 클릭했을 때</h3>
+<form action="servlet15">
+<button>servlet15 실행 요청하기</button>
+</form>
+<p>
+action="상대경로" : 위에서 설명한 상대 경로 규칙과 같다.
+</p>
+
+<h1>Post 요청 예</h1>
+<h3> 1) 입력 폼의 메서드를 "post"로 설정한 경우</h3>
+<form action="servlet15" method="post">
+<button>servlet15 실행 요청하기</button>
+</form>
+
+
+</body>
+</html>

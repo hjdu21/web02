@@ -1,0 +1,48 @@
+<!-- 주제 : 테이블 셀 병합 기법 <colspan> <rowspan> 속성
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+table {
+	border: 1px solid black;
+}
+
+th, td {
+	border: 1px solid gray;
+}
+</style>
+
+
+</head>
+
+<body>
+
+	<table>
+		<caption>성적표</caption>
+
+		<tr>
+			<th>반</th>	<th>이름</th> <th>국어</th> <th>영어</th> <th>수학</th> <th>총점</th>
+		</tr>
+
+		<tr> <td rowspan="3">1</td> <td>홍길동</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>임꺽정</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>이순신</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <td> 반평균 </td> <td colspan="5">90</td> </tr>
+		<tr> <td rowspan="3">2</td> <td>강감찬</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>유관순</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>안중근</td> <td>90</td> <td>90</td> <td>90</td> <td>270</td> </tr>
+		<tr> <td> 반평균 </td> <td colspan="5">90</td> </tr>
+		<tr> <td rowspan="3">3</td> <td>윤봉길</td> <td>90</td> <td>90</td> <td>90</td> 			<td>270</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>최재우</td> <td colspan="3" rowspan="2"> 전학갔음 </td> <td>0</td> </tr>
+		<tr> <!-- 위의 td가 차지 --><td>신채호</td>										 			<td>0</td> </tr>
+		<tr> <td> 반평균 </td> <td colspan="5">90</td> </tr>
+	
+
+
+	</table>
+
+</body>
+</html>
